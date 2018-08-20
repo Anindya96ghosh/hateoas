@@ -39,12 +39,24 @@ public class UsersResource{
 		user1.add(link1);
 		
 		Users user2= new Users("Sayali",15000);
-		user2.add(link1);
+		
 		
 
-//		Link link2 = ControllerLinkBuilder.linkTo(UsersResource.class)
-//					.slash(user2.getUserName()).withSelfRel();
-		
+		Link link2 = ControllerLinkBuilder.linkTo(UsersResource.class)
+					.slash(user2.getUserName()).withSelfRel();
+		user2.add(link2);
 		return Arrays.asList(user1,user2);
+	}
+	
+	@RequestMapping(value="/Anindya", method= RequestMethod.GET)
+	public String obj1()
+	{
+		return "This is Anindya";
+	}
+	
+	@RequestMapping(value="/Sayali", method= RequestMethod.GET)
+	public String obj2()
+	{
+		return "This is Sayali";
 	}
 }
